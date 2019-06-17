@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - 2.6.0
+
+before_script:
+  gem install html-proofer
+  git clone https://github.com/Remillardj/jremillard.git
+  cd jremillard/
+
+bundle install
+bundle exec jekyll build
+bundle exec htmlproofer ./_site
