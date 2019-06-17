@@ -2,9 +2,10 @@ language: ruby
 rvm:
   - 2.6.0
 
+gem install bundler:2.0.2
+bundle --update bundler
+
 before_script:
-  gem update --bundler
-  gem install bundler:2.0.2
   gem install html-proofer
   git clone https://github.com/Remillardj/jremillard.git
   cd jremillard/
