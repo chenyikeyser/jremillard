@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="bg-dark">
+    <head>
+        <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+        {% include head_meta.html %}
+        {% include vendors.html %}
+        <link rel="stylesheet" href="{{ site.baseurl}}/assets/css/default.css">
+    </head>
+    <body id="page-top" class="bg-light">
+        {% include masthead.html %}
+        
+        <!-- post content start -->
+        {{ content }}
+        <!-- post content end -->
+
+        {% include footer.html %}
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="{{ site.baseurl}}/vendor/jquery/jquery.min.js"></script>
+        <script src="{{ site.baseurl}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="{{ site.baseurl}}/vendor/jquery-easing/jquery.easing.min.js"></script>
+    </body>
+</html>
