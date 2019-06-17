@@ -13,5 +13,5 @@ before_script:
 
 script:
   - bundle install
-  - bundle exec jekyll build
-  - bundle exec htmlproofer ./_site
+  - jekyll build
+  - htmlproofer ./_site
