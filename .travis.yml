@@ -7,6 +7,7 @@ before_script:
   git clone https://github.com/Remillardj/jremillard.git
   cd jremillard/
 
-bundle install
-bundle exec jekyll build
-bundle exec htmlproofer ./_site
+script:
+  bundle install
+  bundle exec jekyll build
+  bundle exec htmlproofer ./_site
