@@ -6,7 +6,7 @@ Soon to implement Travis CI
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Remillardj/jremillard/master/LICENSE)
 
 ## Preview
-![Preview](/image/preview.png)
+![Preview](/images/preview.png)
 
 ## Download, Installation and Usage
 * Clone repo `git clone https://github.com/Remillardj/jremillard.git`
