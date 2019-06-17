@@ -1,4 +1,8 @@
 # CHANGELOG
+## 0.1.0
+- minor release due to travis CI integration passing
+- and README properly updated, it's ready to go
+
 ## 0.0.3
 - fixed bug where html proof would see empty anchor tag
 

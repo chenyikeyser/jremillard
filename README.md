@@ -2,7 +2,7 @@
 
 ## Status
 
-Soon to implement Travis CI
+[![Build Status](https://travis-ci.org/Remillardj/jremillard.svg?branch=master)](https://travis-ci.org/Remillardj/jremillard)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Remillardj/jremillard/master/LICENSE)
 
 ## Preview
