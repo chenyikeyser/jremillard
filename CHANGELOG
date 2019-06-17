@@ -1,4 +1,7 @@
 # CHANGELOG
+## 0.0.3
+- fixed bug where html proof would see empty anchor tag
+
 ## 0.0.2
 - add travis CI
 
