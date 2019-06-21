@@ -1,16 +1,20 @@
 language: ruby
 rvm:
-  - 2.6.0
-
+- 2.6.0
 before_install:
-  - gem update --system
-  - gem install bundler
-
+- gem update --system
+- gem install bundler
 before_script:
-  - gem install html-proofer
-  - git clone https://github.com/Remillardj/jremillard.git
-  - cd jremillard/
-
+- gem install html-proofer
+- git clone https://github.com/Remillardj/jremillard.git
+- cd jremillard/
 script:
-  - bundle install
-  - bundle exec jekyll build
+- bundle install
+- bundle exec jekyll build
+
+deploy:
+  provider: firebase
+  token:
+    secure: SW+uI9GcN+j1BT+l1UZ0kDZHEeUWHquLN6GO5auh7DfkBlTcPtaB6qGuJ/y+GncsSWCp93wBWPYlvs2Iu2nxX3x37yFOJqUmCWuKXs4vP1K95NaheYBribIrjNAyeHMarI/8XJMfEcpZ3mhM33P3a6f2vhZMWPnn+FFNyVPopb37TeRj7a3rHa+HnB/2IYHVTTJHWf48M5logbuMJGX4DCg6ngUTyoJTiFTkMXyXvwGjW3yIluqkFNI3HjiWdPgtSMuqWJuKP5k2QRwo9A9gWXueEHoLKUvLFOGEcHfidIA240ZfyNXRbUAIkaUz3O/eb6W9H2xFpWbFDPub487pEGlfMmMwWXbg57OMQfebnvzvpeYxOu/1uLKWCTRZfg5SaHPBvX9gkaC4LLQPei+m/KQO58jppSRFt2RdoFqXtkVLqYkJ32zmK1GAzOqYghA7Jh0izMxCI94BGNOqqritjwwqubnLVZQIPcJjRiFvUa2b3x3w/WtY9d8XqYxpBEorhTbdXZjlLNP8uNNsiSCEr55fIujda8Lz7MHQyyvjTP+Ej06WxTqB2FHTBrEzJJ8RWQUjEqo/8c9w3RFyigsfM/rKi2E7olCvxKJ5eyId/Z5FsNpOuNcC8jvU/Yy9hKhHGO+BL5jMmhAXLEx4rgqLt809RQhTLTlsll/V8tlDQvs=
+  project: "jremillard-blog"
+  message: "Deploying to Firebase..."
