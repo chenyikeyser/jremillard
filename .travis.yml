@@ -1,20 +1,30 @@
-language: ruby
+language: node_ks
+
 rvm:
-- 2.6.0
+  - 2.6.0
+
 before_install:
-- gem update --system
-- gem install bundler
-before_script:
-- gem install html-proofer
-- git clone https://github.com/Remillardj/jremillard.git
-- cd jremillard/
+  - gem update --system
+  - gem install bundler
+  - gem install html-proofer
+  - git clone https://github.com/Remillardj/jremillard.git
+  - cd jremillard/
+
+install:
+  - npm install -g firebase-tools
+
 script:
-- bundle install
-- bundle exec jekyll build
+  - bundle check || bundle install
+  - set -e
+  - jekyll build
 
 deploy:
   provider: firebase
   token:
-    secure: SW+uI9GcN+j1BT+l1UZ0kDZHEeUWHquLN6GO5auh7DfkBlTcPtaB6qGuJ/y+GncsSWCp93wBWPYlvs2Iu2nxX3x37yFOJqUmCWuKXs4vP1K95NaheYBribIrjNAyeHMarI/8XJMfEcpZ3mhM33P3a6f2vhZMWPnn+FFNyVPopb37TeRj7a3rHa+HnB/2IYHVTTJHWf48M5logbuMJGX4DCg6ngUTyoJTiFTkMXyXvwGjW3yIluqkFNI3HjiWdPgtSMuqWJuKP5k2QRwo9A9gWXueEHoLKUvLFOGEcHfidIA240ZfyNXRbUAIkaUz3O/eb6W9H2xFpWbFDPub487pEGlfMmMwWXbg57OMQfebnvzvpeYxOu/1uLKWCTRZfg5SaHPBvX9gkaC4LLQPei+m/KQO58jppSRFt2RdoFqXtkVLqYkJ32zmK1GAzOqYghA7Jh0izMxCI94BGNOqqritjwwqubnLVZQIPcJjRiFvUa2b3x3w/WtY9d8XqYxpBEorhTbdXZjlLNP8uNNsiSCEr55fIujda8Lz7MHQyyvjTP+Ej06WxTqB2FHTBrEzJJ8RWQUjEqo/8c9w3RFyigsfM/rKi2E7olCvxKJ5eyId/Z5FsNpOuNcC8jvU/Yy9hKhHGO+BL5jMmhAXLEx4rgqLt809RQhTLTlsll/V8tlDQvs=
-  project: "jremillard-blog"
-  message: "Deploying to Firebase..."
+    secure: "YtSPPjtZnWGRvJa0dYknUJlhD8QqqiKciEeswvWW9S8KSYkD2F+VHWEW30NfEgka1ICzGaVAMOuA3tQwjBoZaZ0C3sGwUB22snXU1JiAwgRFn7V2z6md9yhP9GV85ylCFjYqDsWAhl6qN4TdFSphHq23DFm0Dm01YuMHXOtzRz9nDZOx2ZiVkUrLZwARPwU0ExrSZ1WWMRApsOs/U4uvtpjUS5jUacQxaO4gbJTVGJ6v1se4J92fDkB7kmPDWJLqlSyBb1z6WoGCS3/6LwxCN5rLzxMJ0zDAw9Ckux/T22DkaRxMK7hUyxZAtESWFye5TBpGgkblAyTLVPS2bnz/h0X1S2wxvrlsCleHK3Wiu24Hd5pnch2ZmTSPOCqDIrCUHz73P3UxIv6FOP9IlTv0sMc0OvX0BItXIm6YAPEV3ax0YQyKVKEghWiH/UbErhnvDVIqQJuiAaKzOBkOGfyiDperqrBJYnOHiVjIbcsPMmloZq21o8hEL1RU3zjItTQxyG+Y5z2aww3Tf9wOa3xFZF4cQvKMEZRjEvHIkDE/VFgnTmS1Er73eBwuJ+0AGu8fFOIDwKYP1UnFuyBGiiRW5H/z0GAnqhLz8AUjcb0sY9MFG9jZW3tBlrbFQ04paZdxtAdAUMLrdI3FyriFCsP198xPdZvIoTYBckVkLVNE+l4="
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+sudo: false
