@@ -1,4 +1,4 @@
-language: node_ks
+language: node_js
 
 rvm:
   - 2.6.0
