@@ -1,4 +1,8 @@
 # CHANGELOG
+## 0.1.1
+- make images responsive
+- break text for mobile devices
+
 ## 0.1.0
 - minor release due to travis CI integration passing
 - and README properly updated, it's ready to go

@@ -2,11 +2,11 @@
 layout: default
 title: Home
 ---
-<section id="post">
+<section id="post" class="container-fluid">
     {% for post in paginator.posts %}
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-8 mx-auto text-break">
                 <h2 id="post-title">{{ post.title }}</h2>
                 <p class="lead">
                     {{ post.content }}
