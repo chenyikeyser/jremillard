@@ -1,0 +1,17 @@
+# CHANGELOG
+## 0.1.1
+- make images responsive
+- break text for mobile devices
+
+## 0.1.0
+- minor release due to travis CI integration passing
+- and README properly updated, it's ready to go
+
+## 0.0.3
+- fixed bug where html proof would see empty anchor tag
+
+## 0.0.2
+- add travis CI
+
+## 0.0.1
+- initial upload with readme for public use
