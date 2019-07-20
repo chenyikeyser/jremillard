@@ -40,6 +40,32 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-break">
+                <h2 id="post-title">Using Firebase To Host Websites</h2>
+                <p class="lead">
+                    <p>Recently I had an itch to create websites again, in search of eventually creating a SaaS, but in order to do so, I need to have the design down. Web design was something I enjoyed deeply over a decade ago, using w3 schools to learn html and learning how file structures work. It is my old homage and a comfort zone when it comes to computers. It has been a while since I designed something, especially for a purpose, so to satisfy that itch I decided to dedicate a weekend to doing so, seeing how much I can pick up web development again.</p>
+
+<p>One of the biggest issues I found when I started web development was hosting solutions. Any free-tier based web hosting is always crap and it only gets worse from there. I knew AWS has the ability to host static websites, and AWS is a topic I wanted to learn more in so I decided to delve into it.</p>
+
+<p>As I log into my old account, I realize I was actually getting billed for SOMETHING, still not sure what since everything was shutdown and deleted. I logged into my GCP account and realized I had that $300 credit available to my account and asked myself if its possible to host a static website using GCP, and it is possible.</p>
+
+<p>It is so simple to set something like that up, just some simple rerouting and setting buckets available, but unfortunately something I eventually noticed was that it only allows HTTP and not HTTPS. Bummer. And the more I looked into how to get an HTTPS certificate for my website, the more complicated it got with setting up loadbalancers, etc. I wanted a cheap, near free, solution to just host some pictures, html, css and maybe a tiny tiny bit of javascript.</p>
+
+<p>I knew static hosting via GCP was not going to be enough, I also did not want to use GitHub to host my site even though that it possible and it does issue HTTPS certificates, I wanted it to be a little bit more hidden than a public repository. I dug around and found Firebase, a Google product that can host static websites, both HTTP and HTTPS. This was a winner.</p>
+
+<p>It was so easy to integrate Travis CI with GitHub to deploy to Firebase. Only took a few hours to get that running and set up MX records to point to my firebase website. If you have a website that is simple and does not need a lot of traffic, Firebase is the way to go.</p>
+
+<p>The biggest downside to using Firebase is there is a download cap, anyone viewing your website will require downloading data which will cost you money. If you have that $300 credit, you can use that for your website, however, there is a free tier of Firebase which if you do not need a lot of web traffic, this is a great solution. Feel free to take a look at the repo, particularly the travis.yml and firebase.json on how I set up Travis CI to Firebase.</p>
+
+                </p>
+                <p class="text-muted font-italic font-weight-light">Posted on July 20, 2019</p>
+                <hr />
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-break">
                 <h2 id="post-title">Becoming A Remote Employee Within A Year</h2>
                 <p class="lead">
                     <p>I started working at SendGrid a little over a year ago, moving from my hometown to Orange County, California. I took this opportunity because at the time I did not have any commitments or responsibilities chaining me to my hometown, making it the perfect opportunity to pick up my belongings and move to a whole new city.</p>
@@ -193,46 +219,6 @@
 
                 </p>
                 <p class="text-muted font-italic font-weight-light">Posted on September 30, 2018</p>
-                <hr />
-            </div>
-        </div>
-    </div>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-break">
-                <h2 id="post-title">Recovering Data From A Failing Hard Drive</h2>
-                <p class="lead">
-                    <p>While attending school a couple years ago, I had a friend come up to me in a frenzy, claiming his computer won’t turn on the day before finals containing all his homework as well as programs he wrote for Computer Science class. The laptop he handed me was a thick 2010 MacBook Pro that brought back nostalgia of carrying the dumbbell weight in my backpack to and from school.</p>
-
-<p>When I attempted to boot it up, I noticed that it would struggle to boot into the OS, and if it did, it has horrible lag and eventually shutdown. I was able to deduce this to a corrupted OS, as he mentioned he has not updated it in a while. I did a repair on the disk from the disk repair utility upon bootup, and noticed the hard drive was formatted incorrectly. This made me start to question the years of IT experience I had.</p>
-
-<p>Safe mode was not working, I could not reinstall the OS, repairing the disk did not work, I could not boot into the system, nor could I format a hard drive with the OS and boot into that. All I was left with is single user mode, which fortunately I was able to get root through an exploit at the time.</p>
-
-<p>/sbin/fsck -y<br />
-/sbin/mount -wu / # Mounts the volume of root directory with r/wOnce I logged in, I would try to move files onto a USB I plugged in, occasionally the computer would crap itself, which led me to believe that the computers hard drive is failing, and I knew I had to make it quick as how much time I had was unknown.</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>I checked the SMART status of my drive:diskutil info disk0</td>
-      <td>grep -i smart</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The output was exactly what I was expecting, failing. I plugged in the USB external hard drive and searched for it by doing ls /dev/disk*</p>
-
-<p>Luckily it popped up after a few ls commands as /dev/disk1s2. So the next step is to create a directory in volume, than mount it and copy files over to that directory, than eject it, the hard drive should than contain the files.</p>
-
-<p>mkdir /Volumes/hdd<br />
-mount_hfs /dev/disk1s2/ /Volumes/hddLuckily I had no errors at this point. After getting with my friend to discuss where and what files he wanted to keep, I did a multiple cp -R commands, and copied the files over to the directory.</p>
-
-<p>I then ejected it, and luckily the files moved out without any issues. Boom!</p>
-
-
-                </p>
-                <p class="text-muted font-italic font-weight-light">Posted on September 28, 2018</p>
                 <hr />
             </div>
         </div>

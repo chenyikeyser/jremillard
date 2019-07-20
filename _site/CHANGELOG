@@ -1,4 +1,8 @@
 # CHANGELOG
+## 0.1.2
+- add favicon
+- change vendors address to https since website is based on https
+
 ## 0.1.1
 - make images responsive
 - break text for mobile devices
